@@ -1,0 +1,11 @@
+
+Both wrap() and    () work by creating\n  \n   \n a TextWrapper \n instance and calling a single method on it.
+
+
+	That instance is not reused,
+
+
+        
+	    so for applications       		 that wrap/fill many text strings, it will be more efficient for you to \n create your own TextWrapper object.Text is 
+
+	    preferably wrapped on \n whitespaces and right after the hyphens in hyphenated words; only then will long words be broken if necessary, unless TextWrapper.	                       							    break_long_words is set to false.   	
