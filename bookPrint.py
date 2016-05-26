@@ -16,7 +16,10 @@ def textToBook(file_name, out_file_name, line_width):
 				# print "line_list", line_list
 				for new_line in line_list:
 					# in case the space/tab between two words is larger than the line_width, the second word starts in the new line.
-					new_line_list = textwrap.wrap(new_line, line_width)		
+					# print new_line[:line_width].rsplit(' ', 1)[0]
+					# print new_line[line_width+1:2*line_width].rsplit(' ', 1)[0]
+					print new_line
+					new_line_list = textwrap.wrap(new_line, line_width, break_long_words=False)		
 					for item in new_line_list:
 						print item 
 						out_file.write("%s\n" % item)
@@ -25,7 +28,7 @@ def textToBook(file_name, out_file_name, line_width):
 			
 if __name__ == '__main__':
 	# we assume once we know the page size (A3, A4) and the font of words, we can calculate the number of alphabets  (line_width) each line can hold  
-	line_width = 100
+	line_width = 7
 	in_file_name = "text.txt"
 	out_file_name = "book.txt"
 	textToBook(in_file_name, out_file_name, line_width)
